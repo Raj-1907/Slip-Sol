@@ -1,0 +1,72 @@
+Slip-20
+
+Java
+1)
+
+import java.awt.Frame;
+import java.awt.Color;
+
+public class AWTFrameExample {
+    public static void main(String[] args) {
+        // Create a new frame with the title "TYBBACA"
+        Frame frame = new Frame("TYBBACA");
+
+        // Set the background color to RED
+        frame.setBackground(Color.RED);
+
+        // Set the size of the frame
+        frame.setSize(400, 300);
+
+        // Set the frame to be visible
+        frame.setVisible(true);
+
+        // Add a window listener to handle the close operation
+        frame.addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent we) {
+                frame.dispose(); // Close the frame
+            }
+        });
+    }
+}
+
+
+python
+
+1)- 
+
+import math
+
+class Circle:
+    def __init__(self, radius):
+        """Initialize the circle with a radius."""
+        self.radius = radius
+
+    def area(self):
+        """Calculate the area of the circle."""
+        return math.pi * (self.radius ** 2)
+
+    def circumference(self):
+        """Calculate the circumference of the circle."""
+        return 2 * math.pi * self.radius
+
+# Main execution
+if __name__ == "__main__":
+    radius = float(input("Enter the radius of the circle: "))
+    circle = Circle(radius)
+
+    # Display area and circumference
+    print(f"Area of the circle: {circle.area():.2f}")
+    print(f"Circumference of the circle: {circle.circumference():.2f}")
+
+2)-
+
+def generate_square_dict(n):
+    """Generate a dictionary with numbers and their squares."""
+    return {x: x * x for x in range(1, n + 1)}
+
+# Main execution
+if __name__ == "__main__":
+    n = int(input("Enter a number n: "))
+    square_dict = generate_square_dict(n)
+    print(square_dict)
+

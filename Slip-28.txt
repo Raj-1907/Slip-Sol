@@ -1,0 +1,93 @@
+Slip-28
+JAVA
+1)-
+
+public class CountIntegers {
+    public static void main(String[] args) {
+        int count = 0; // Initialize count of integers
+
+        // Iterate through command line arguments
+        for (String arg : args) {
+            try {
+                Integer.parseInt(arg); // Try to parse the argument as an integer
+                count++; // Increment count if successful
+            } catch (NumberFormatException e) {
+                // Not an integer, catch the exception and do nothing
+            }
+        }
+
+        // Print the count of integers
+        System.out.println("Number of integers: " + count);
+    }
+}
+
+
+Python
+
+1)-
+
+import tkinter as tk
+
+# List of Computer Science courses
+courses = [
+    "Introduction to Computer Science",
+    "Data Structures and Algorithms",
+    "Operating Systems",
+    "Database Management Systems",
+    "Software Engineering",
+    "Computer Networks",
+    "Artificial Intelligence",
+    "Machine Learning",
+    "Web Development",
+    "Mobile App Development"
+]
+
+# Function to display selected course
+def show_selection():
+    selected_course = listbox.curselection()  # Get selected index
+    if selected_course:
+        course_name = listbox.get(selected_course)  # Get selected course name
+        label.config(text=f"Selected Course: {course_name}")  # Update label with selected course
+
+# Create main window
+root = tk.Tk()
+root.title("Computer Science Courses")
+
+# Create Listbox widget
+listbox = tk.Listbox(root, width=50, height=10)
+for course in courses:
+    listbox.insert(tk.END, course)  # Add each course to the Listbox
+listbox.pack(pady=10)
+
+# Create a button to show selected course
+button = tk.Button(root, text="Show Selected Course", command=show_selection)
+button.pack(pady=5)
+
+# Label to display the selected course
+label = tk.Label(root, text="Selected Course: None")
+label.pack(pady=5)
+
+# Run the application
+root.mainloop()
+
+2)-
+# Function to merge two lists into a list of tuples
+def merge_lists_to_tuples(list1, list2):
+    return list(zip(list1, list2))
+
+# Main execution
+if __name__ == "__main__":
+    # Accept two lists from the user
+    list1 = input("Enter the first list of elements (comma-separated): ").split(',')
+    list2 = input("Enter the second list of elements (comma-separated): ").split(',')
+
+    # Strip any extra spaces from the elements
+    list1 = [item.strip() for item in list1]
+    list2 = [item.strip() for item in list2]
+
+    # Merge the lists into a list of tuples
+    merged_list = merge_lists_to_tuples(list1, list2)
+
+    # Display the merged list
+    print("Merged List of Tuples:")
+    print(merged_list)

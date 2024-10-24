@@ -1,0 +1,111 @@
+Slip-16
+
+Java
+1)-
+import java.util.Scanner;
+
+public class SumOfDigits {
+
+    // Recursive method to calculate the sum of digits
+    public static int sumOfDigits(int num) {
+        if (num == 0) {
+            return 0;
+        }
+        return num % 10 + sumOfDigits(num / 10);
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Get the number from the user
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+        
+        // Calculate the sum of digits using the recursive method
+        int result = sumOfDigits(number);
+        
+        // Display the result
+        System.out.println("Sum of digits: " + result);
+        
+        scanner.close();
+    }
+}
+
+
+python
+
+1)-
+class Rectangle:
+    def __init__(self, length, width):
+        """Initialize the rectangle with length and width."""
+        self.length = length
+        self.width = width
+
+    def area(self):
+        """Compute the area of the rectangle."""
+        return self.length * self.width
+
+    def perimeter(self):
+        """Compute the perimeter of the rectangle."""
+        return 2 * (self.length + self.width)
+
+# Example usage
+if __name__ == "__main__":
+    # Create a Rectangle object
+    length = float(input("Enter the length of the rectangle: "))
+    width = float(input("Enter the width of the rectangle: "))
+    
+    rect = Rectangle(length, width)
+    
+    # Calculate and print area and perimeter
+    print(f"Area of the rectangle: {rect.area()}")
+    print(f"Perimeter of the rectangle: {rect.perimeter()}")
+
+2)-
+
+import tkinter as tk
+from tkinter import messagebox
+
+# Function to add item to the listbox
+def add_item():
+    item = entry.get()
+    if item:
+        listbox.insert(tk.END, item)
+        entry.delete(0, tk.END)  # Clear the entry
+    else:
+        messagebox.showwarning("Warning", "Enter an item.")
+
+# Function to print the selected item
+def print_item():
+    try:
+        item = listbox.get(listbox.curselection())
+        messagebox.showinfo("Selected Item", item)
+    except tk.TclError:
+        messagebox.showwarning("Warning", "Select an item to print.")
+
+# Function to delete the selected item
+def delete_item():
+    try:
+        listbox.delete(listbox.curselection())
+    except tk.TclError:
+        messagebox.showwarning("Warning", "Select an item to delete.")
+
+# Create main window
+root = tk.Tk()
+root.title("Simple Listbox Example")
+
+# Entry widget
+entry = tk.Entry(root)
+entry.pack(pady=10)
+
+# Listbox widget
+listbox = tk.Listbox(root)
+listbox.pack(pady=10)
+
+# Buttons
+tk.Button(root, text="Add Item", command=add_item).pack(pady=5)
+tk.Button(root, text="Print Selected", command=print_item).pack(pady=5)
+tk.Button(root, text="Delete Selected", command=delete_item).pack(pady=5)
+
+# Run the application
+root.mainloop()

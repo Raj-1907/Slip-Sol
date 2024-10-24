@@ -1,0 +1,78 @@
+Slip-22
+
+Java
+1)-
+
+import java.util.Scanner;
+
+public class Factorial {
+    
+    // Recursive method to calculate factorial
+    public static int factorial(int n) {
+        return (n == 0 || n == 1) ? 1 : n * factorial(n - 1); // Use ternary operator for base case
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter a non-negative integer: ");
+        int number = scanner.nextInt(); // Read user input
+
+        if (number < 0) {
+            System.out.println("Factorial is not defined for negative numbers.");
+        } else {
+            System.out.println("Factorial of " + number + " is: " + factorial(number)); // Calculate and display factorial
+        }
+        
+        scanner.close(); // Close the scanner
+    }
+}
+
+
+Python-
+
+1)-
+
+class RepeatedString:
+    def __init__(self, text):
+        self.text = text
+
+    def __mul__(self, n):
+        """Overload the * operator to repeat the string n times."""
+        return self.text * n
+
+# Accepting input from the user
+if __name__ == "__main__":
+    user_string = input("Enter a string: ")
+    n = int(input("Enter the number of repetitions: "))
+
+    # Create an instance of RepeatedString
+    repeated_string = RepeatedString(user_string)
+
+    # Display the repeated string
+    result = repeated_string * n
+    print("Repeated String:\n", result)
+
+2)-
+
+def bubble_sort(arr):
+    n = len(arr)
+    # Traverse through all array elements
+    for i in range(n):
+        # Last i elements are already in place
+        for j in range(0, n - i - 1):
+            # Traverse the array from 0 to n-i-1
+            # Swap if the element found is greater than the next element
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+
+# Example usage
+if __name__ == "__main__":
+    # Sample list
+    sample_list = [64, 34, 25, 12, 22, 11, 90]
+    print("Original list:", sample_list)
+    
+    # Sorting the list using bubble sort
+    bubble_sort(sample_list)
+    
+    print("Sorted list:", sample_list)

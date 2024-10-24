@@ -1,0 +1,63 @@
+Slip-21
+
+Java-
+
+1)-
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class ReverseWordsFromFile {
+    public static void main(String[] args) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("input.txt"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                // Split the line into words and print each reversed word
+                for (String word : line.split("\\s+")) {
+                    System.out.println(new StringBuilder(word).reverse().toString());
+                }
+            }
+        } catch (IOException e) {
+            System.err.println("Error reading the file: " + e.getMessage());
+        }
+    }
+}
+
+
+
+Python-
+
+1)-
+
+class Rectangle:
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+
+    def area(self):
+        """Calculate the area of the rectangle."""
+        return self.length * self.width
+
+    def perimeter(self):
+        """Calculate the perimeter of the rectangle."""
+        return 2 * (self.length + self.width)
+
+# Example usage:
+if __name__ == "__main__":
+    # Create a rectangle with a length of 5 and a width of 3
+    rectangle = Rectangle(5, 3)
+    
+    # Calculate and print the area and perimeter
+    print("Area of the rectangle:", rectangle.area())          # Output: 15
+    print("Perimeter of the rectangle:", rectangle.perimeter())  # Output: 16
+
+2)-
+# Original tuple of string values
+original_tuple = (('333', '33'), ('1416', '55'))
+
+# Convert the tuple of string values to a tuple of integer values
+converted_tuple = tuple(tuple(int(value) for value in inner_tuple) for inner_tuple in original_tuple)
+
+# Display the original and new tuple values
+print("Original tuple values:", original_tuple)
+print("New tuple values:", converted_tuple)

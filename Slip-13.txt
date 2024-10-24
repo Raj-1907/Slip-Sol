@@ -1,0 +1,99 @@
+Slip-13
+
+Java
+
+1)-
+
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.Collections;
+
+public class ReverseArrayList {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Create an ArrayList to store integers
+        ArrayList<Integer> numbers = new ArrayList<>();
+        
+        // Get the number of integers to be entered
+        System.out.print("Enter the number of integers: ");
+        int n = scanner.nextInt();
+        
+        // Accept 'n' integers from the user
+        System.out.println("Enter " + n + " integers:");
+        for (int i = 0; i < n; i++) {
+            numbers.add(scanner.nextInt());
+        }
+        
+        // Display the elements in reverse order
+        System.out.println("Elements in reverse order:");
+        Collections.reverse(numbers);
+        for (int num : numbers) {
+            System.out.print(num + " ");
+        }
+        
+        scanner.close();
+    }
+}
+
+
+
+Python
+
+1)-
+
+def get_positive_integer():
+    try:
+        # Input a number from the user
+        number = int(input("Enter a positive integer: "))
+
+        # Check if the number is positive
+        if number > 0:
+            print("You have entered a valid positive integer:", number)
+        else:
+            print("Error: The number is not positive. Please enter a positive integer.")
+    except ValueError:
+        # Handle the case where the input is not an integer
+        print("Error: Invalid input. Please enter a valid integer.")
+
+# Call the function
+get_positive_integer()
+
+2)-
+
+# Queue implementation using a list
+queue = []
+
+# Function to add an element to the queue
+def enqueue(element):
+    queue.append(element)
+    print(f"{element} added to the queue")
+
+# Function to remove an element from the queue
+def dequeue():
+    if len(queue) == 0:
+        print("Queue is empty, cannot dequeue")
+    else:
+        removed_element = queue.pop(0)
+        print(f"{removed_element} removed from the queue")
+
+# Function to display the queue
+def display():
+    if len(queue) == 0:
+        print("Queue is empty")
+    else:
+        print("Current queue:", queue)
+
+# Testing the queue operations
+enqueue(10)
+enqueue(20)
+enqueue(30)
+display()
+
+dequeue()
+display()
+
+dequeue()
+dequeue()
+dequeue()  # Attempt to dequeue from an empty queue

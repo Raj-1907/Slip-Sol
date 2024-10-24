@@ -1,0 +1,92 @@
+Slip-8
+
+Java
+1)-
+// Interface definition
+interface Shape {
+    double area(); // Abstract method to calculate area
+}
+
+// Class to calculate area of a Circle
+class Circle implements Shape {
+    private final double radius; // Final field for radius
+
+    // Constructor
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    // Implementing area method for Circle
+    public double area() {
+        return Math.PI * radius * radius; // Area = π * r^2
+    }
+}
+
+// Class to calculate surface area of a Sphere
+class Sphere implements Shape {
+    private final double radius; // Final field for radius
+
+    // Constructor
+    public Sphere(double radius) {
+        this.radius = radius;
+    }
+
+    // Implementing area method for Sphere
+    public double area() {
+        return 4 * Math.PI * radius * radius; // Surface Area = 4 * π * r^2
+    }
+}
+
+// Main class
+public class ShapeAreaCalculator {
+    public static void main(String[] args) {
+        Shape circle = new Circle(5.0); // Circle with radius 5.0
+        Shape sphere = new Sphere(3.0); // Sphere with radius 3.0
+
+        // Displaying the areas
+        System.out.println("Area of Circle: " + circle.area());
+        System.out.println("Surface Area of Sphere: " + sphere.area());
+    }
+}
+
+
+Python
+
+1)-
+# Function to find repeated items in a tuple
+def find_repeated_items(input_tuple):
+    # Count occurrences using a dictionary
+    item_count = {}
+    for item in input_tuple:
+        item_count[item] = item_count.get(item, 0) + 1
+
+    # Return only items that are repeated
+    return {item: count for item, count in item_count.items() if count > 1}
+
+# Example tuple
+my_tuple = (1, 2, 3, 4, 2, 5, 3, 1, 6, 7, 3)
+
+# Find and print repeated items
+repeated = find_repeated_items(my_tuple)
+print("Repeated items:", repeated)
+
+
+2)-
+class StringManipulator:
+    def __init__(self):
+        self.string = ""
+
+    def get_String(self):
+        self.string = input("Enter a string: ")
+
+    def print_String(self):
+        print(self.string.upper())
+
+    def reverse_and_lower(self):
+        print(' '.join(self.string.split()[::-1]).lower())
+
+# Example usage
+string_manipulator = StringManipulator()
+string_manipulator.get_String()
+string_manipulator.print_String()
+string_manipulator.reverse_and_lower()

@@ -1,0 +1,85 @@
+Slip-18
+
+Java-
+1)-
+public class AreaCalculator {
+
+    // Method to calculate the area of a circle (π * radius^2)
+    public static double calculateArea(double radius) {
+        return Math.PI * radius * radius;
+    }
+
+    // Method to calculate the area of a triangle (0.5 * base * height)
+    public static double calculateArea(double base, double height) {
+        return 0.5 * base * height;
+    }
+
+    // Method to calculate the area of a rectangle (length * width)
+    public static double calculateArea(int length, int width) {
+        return length * width;
+    }
+
+    public static void main(String[] args) {
+        // Calculating the area of a circle with radius 5
+        double circleArea = calculateArea(5.0);
+        System.out.println("Area of Circle: " + circleArea);
+
+        // Calculating the area of a triangle with base 4 and height 6
+        double triangleArea = calculateArea(4.0, 6.0);
+        System.out.println("Area of Triangle: " + triangleArea);
+
+        // Calculating the area of a rectangle with length 7 and width 3
+        double rectangleArea = calculateArea(7, 3);
+        System.out.println("Area of Rectangle: " + rectangleArea);
+    }
+}
+
+
+python
+
+1)-
+
+# Create the list
+a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+
+# Print elements less than 5
+print("Elements less than 5:")
+for number in a:
+    if number < 5:
+        print(number)
+
+2)-
+
+class Person:
+    def __init__(self, name, address):
+        self.name = name
+        self.address = address
+
+class Employee(Person):
+    def __init__(self, name, address, staff_id, salary):
+        super().__init__(name, address)
+        self.staff_id = staff_id
+        self.salary = salary
+
+# Function to create employees and display details
+def create_employees(n):
+    employees = []
+    
+    for _ in range(n):
+        name = input("Enter name: ")
+        address = input("Enter address: ")
+        staff_id = input("Enter staff ID: ")
+        salary = float(input("Enter salary: "))
+        
+        employees.append(Employee(name, address, staff_id, salary))
+
+    # Display employee details
+    print("\nEmployee Details:")
+    for emp in employees:
+        print(f"Name: {emp.name}, Address: {emp.address}, Staff ID: {emp.staff_id}, Salary: {emp.salary}")
+
+# Main execution
+if __name__ == "__main__":
+    n = int(input("Enter the number of employees: "))
+    create_employees(n)
+

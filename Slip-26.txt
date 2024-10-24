@@ -1,0 +1,80 @@
+Slip-26
+Java
+
+1)-
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class AsciiValueDisplay {
+    public static void main(String[] args) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("input.txt"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                for (char character : line.toCharArray()) {
+                    System.out.println(character + ": " + (int) character); // Print character and ASCII value
+                }
+            }
+        } catch (IOException e) {
+            System.err.println("Error: " + e.getMessage());
+        }
+    }
+}
+
+
+Python
+
+1)-
+
+# Anonymous function for area of a square
+area_square = lambda side: side ** 2
+
+# Anonymous function for area of a rectangle
+area_rectangle = lambda length, width: length * width
+
+# Example usage
+if __name__ == "__main__":
+    # Calculate and print areas
+    print("Area of square (side=4):", area_square(4))            # Output: 16
+    print("Area of rectangle (length=5, width=3):", area_rectangle(5, 3))  # Output: 15
+
+2)-
+
+import tkinter as tk
+
+def alter_sentence():
+    input_sentence = entry.get()  # Get the input from the entry widget
+    altered_sentence = ''
+    
+    for char in input_sentence:
+        if char.isalpha():  # Check if character is an alphabet
+            altered_sentence += char.swapcase()  # Reverse case
+        elif char.isdigit():  # Check if character is a digit
+            altered_sentence += '?'  # Replace digit with '?'
+        elif char == ' ':  # Check if character is a space
+            altered_sentence += '*'  # Replace space with '*'
+        else:
+            altered_sentence += char  # Keep other characters unchanged
+
+    text_area.delete(1.0, tk.END)  # Clear previous output
+    text_area.insert(tk.END, altered_sentence)  # Display altered sentence
+
+# Create the main window
+root = tk.Tk()
+root.title("Sentence Alteration")
+
+# Entry widget for user input
+entry = tk.Entry(root, width=50)
+entry.pack(pady=10)
+
+# Button to alter the sentence
+button = tk.Button(root, text="Alter Sentence", command=alter_sentence)
+button.pack(pady=5)
+
+# Text area to display the altered sentence
+text_area = tk.Text(root, height=5, width=50)
+text_area.pack(pady=10)
+
+# Start the application
+root.mainloop()

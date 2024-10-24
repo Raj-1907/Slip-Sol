@@ -1,0 +1,84 @@
+Slip-10
+
+Java
+
+1)-
+
+import java.util.Scanner;
+
+public class CharacterFrequency {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Get the input string from the user
+        System.out.print("Enter a string: ");
+        String input = scanner.nextLine();
+
+        // Array to store character frequencies
+        int[] freq = new int[256]; // Assuming ASCII character set
+
+        // Count the frequency of each character
+        for (char c : input.toCharArray()) {
+            freq[c]++;
+        }
+
+        // Display the character frequencies
+        System.out.println("Character frequencies:");
+        for (int i = 0; i < freq.length; i++) {
+            if (freq[i] > 0) {
+                System.out.println((char) i + ": " + freq[i]);
+            }
+        }
+
+        scanner.close();
+    }
+}
+
+
+Python
+
+1)-
+
+import tkinter as tk
+from tkinter import messagebox
+
+# Function to display an alert message
+def show_alert():
+    messagebox.showinfo("Alert", "Button Pressed!")
+
+# Create the main window
+root = tk.Tk()
+root.title("Alert Message Example")
+
+# Create a button
+alert_button = tk.Button(root, text="Press Me", command=show_alert)
+alert_button.pack(pady=20)
+
+# Run the application
+root.mainloop()
+
+2)-
+
+class ParenthesesValidator:
+    def is_valid(self, s):
+        stack = []
+        pairings = {')': '(', '}': '{', ']': '['}
+
+        for char in s:
+            if char in pairings:
+                if not stack or stack.pop() != pairings[char]:
+                    return False
+            else:
+                stack.append(char)
+
+        return not stack
+
+# Example usage
+validator = ParenthesesValidator()
+
+# Test cases
+test_cases = ["()", "()[]{}", "(]", "([)]", "{{{"]
+
+for test in test_cases:
+    print(f"{test}: {validator.is_valid(test)}")

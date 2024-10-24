@@ -1,0 +1,93 @@
+Slip-11
+
+Java
+
+1)-
+
+public class ArithmeticOperations {
+
+    public static void main(String[] args) {
+        if (args.length < 3) {
+            System.out.println("Usage: java ArithmeticOperations <operation> <num1> <num2>");
+            System.out.println("Operations: 1 for Addition, 2 for Subtraction, 3 for Multiplication, 4 for Division");
+            return;
+        }
+
+        // Parse the command line arguments
+        int choice = Integer.parseInt(args[0]);
+        double num1 = Double.parseDouble(args[1]);
+        double num2 = Double.parseDouble(args[2]);
+
+        // Perform the operation based on the user's choice
+        switch (choice) {
+            case 1:
+                System.out.println("Addition: " + (num1 + num2));
+                break;
+            case 2:
+                System.out.println("Subtraction: " + (num1 - num2));
+                break;
+            case 3:
+                System.out.println("Multiplication: " + (num1 * num2));
+                break;
+            case 4:
+                if (num2 != 0) {
+                    System.out.println("Division: " + (num1 / num2));
+                } else {
+                    System.out.println("Error: Division by zero is not allowed.");
+                }
+                break;
+            default:
+                System.out.println("Invalid choice. Please enter a number between 1 and 4.");
+        }
+    }
+}
+
+how to run
+
+javac ArithmeticOperations.java
+
+java ArithmeticOperations 1 10 20 [choice <num1> <num2>]
+
+Python
+
+1)-
+
+# Given tuples
+tuple1 = (1, 2, 3, 4)
+tuple2 = (3, 5, 2, 1)
+tuple3 = (2, 2, 3, 1)
+
+# Compute the element-wise sum using zip
+result = tuple(sum(values) for values in zip(tuple1, tuple2, tuple3))
+
+# Display the result
+print("Element-wise sum of the tuples:", result)
+
+2)-
+
+import tkinter as tk
+
+def change_bg_color(color):
+    root.config(bg=color)
+
+# Create the main window
+root = tk.Tk()
+root.title("Change Background Color")
+root.geometry("400x300")
+
+# Create a menu bar
+menu_bar = tk.Menu(root)
+
+# Add Colors menu with options
+color_menu = tk.Menu(menu_bar, tearoff=0)
+menu_bar.add_cascade(label="Colors", menu=color_menu)
+
+# List of color options
+for color in ["red", "green", "blue", "yellow", "pink", "cyan"]:
+    color_menu.add_command(label=color.capitalize(), command=lambda c=color: change_bg_color(c))
+
+# Configure the menu bar
+root.config(menu=menu_bar)
+
+# Run the application
+root.mainloop()

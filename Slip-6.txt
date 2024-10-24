@@ -1,0 +1,141 @@
+Slip-6
+
+Java
+1)
+
+import java.util.Scanner;
+
+// User-defined Exception
+class NumberIsZeroException extends Exception {
+    public NumberIsZeroException() {
+        super("Number is zero.");
+    }
+}
+
+public class SumFirstLastDigit {
+
+    // Static method to calculate the sum of the first and last digits
+    public static int sumFirstAndLastDigit(int number) {
+        String numStr = String.valueOf(number);
+        int firstDigit = Character.getNumericValue(numStr.charAt(0));
+        int lastDigit = Character.getNumericValue(numStr.charAt(numStr.length() - 1));
+        return firstDigit + lastDigit; // Return the sum
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+
+        try {
+            if (number == 0) {
+                throw new NumberIsZeroException(); // Throw exception if zero
+            }
+
+            int sum = sumFirstAndLastDigit(number);
+            System.out.println("Sum of the first and last digit: " + sum);
+
+        } catch (NumberIsZeroException e) {
+            System.out.println(e.getMessage()); // Print exception message
+        } finally {
+            scanner.close(); // Close the scanner
+        }
+    }
+}
+
+
+Python
+
+1)-
+geometry/
+    __init__.py
+    cube.py
+    sphere.py
+main.py
+
+geometry/cube.py
+
+# Module for Cube calculations
+
+def area(side):
+    """Calculate surface area of a cube"""
+    return 6 * (side ** 2)
+
+def volume(side):
+    """Calculate volume of a cube"""
+    return side ** 3
+
+geometry/sphere.py
+
+import math
+
+# Module for Sphere calculations
+
+def area(radius):
+    """Calculate surface area of a sphere"""
+    return 4 * math.pi * (radius ** 2)
+
+def volume(radius):
+    """Calculate volume of a sphere"""
+    return (4 / 3) * math.pi * (radius ** 3)
+
+gemetry/__init__
+# Optional import statements
+from .cube import area as cube_area, volume as cube_volume
+from .sphere import area as sphere_area, volume as sphere_volume
+
+main.py
+
+from geometry import cube, sphere
+
+# Example input for cube and sphere
+cube_side = 3
+sphere_radius = 5
+
+# Cube calculations
+print(f"Cube with side {cube_side}:")
+print(f"Surface Area: {cube.area(cube_side)}")
+print(f"Volume: {cube.volume(cube_side)}")
+
+# Sphere calculations
+print(f"\nSphere with radius {sphere_radius}:")
+print(f"Surface Area: {sphere.area(sphere_radius)}")
+print(f"Volume: {sphere.volume(sphere_radius)}")
+
+
+2)-
+
+import tkinter as tk
+
+# Function to update the label font
+def update_font():
+    font_family = font_var.get()
+    font_size = int(size_var.get())
+    font_weight = "bold" if bold_var.get() else "normal"
+    label.config(font=(font_family, font_size, font_weight))
+
+# Create main window
+root = tk.Tk()
+root.title("Simple Font Changer")
+
+# Label to display the text
+label = tk.Label(root, text="Sample Text", font=("Arial", 12))
+label.pack(pady=10)
+
+# Dropdown for font family
+font_var = tk.StringVar(value="Arial")
+tk.OptionMenu(root, font_var, "Arial", "Helvetica", "Times").pack()
+
+# Dropdown for font size
+size_var = tk.StringVar(value="12")
+tk.OptionMenu(root, size_var, "10", "12", "14", "16").pack()
+
+# Check button for bold style
+bold_var = tk.IntVar()
+tk.Checkbutton(root, text="Bold", variable=bold_var, command=update_font).pack()
+
+# Button to apply changes
+tk.Button(root, text="Apply", command=update_font).pack(pady=10)
+
+# Run the application
+root.mainloop()

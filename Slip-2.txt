@@ -1,0 +1,81 @@
+Slip-2
+
+Java
+1)-
+import java.util.Scanner;
+
+public class VowelExtractor {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String input = scanner.nextLine(); // Accept user input
+
+        System.out.print("Vowels in the given string: ");
+        // Iterate through each character in the string
+        for (char ch : input.toCharArray()) {
+            // Check if the character is a vowel (both uppercase and lowercase)
+            if (isVowel(ch)) {
+                System.out.print(ch + " "); // Print the vowel
+            }
+        }
+        
+        scanner.close(); // Close the scanner
+    }
+
+    // Method to check if a character is a vowel
+    public static boolean isVowel(char ch) {
+        // Check if the character is a vowel
+        return "AEIOUaeiou".indexOf(ch) != -1;
+    }
+}
+
+
+python
+
+1)-
+def count_upper_lower(s):
+    upper_count = 0
+    lower_count = 0
+
+    # Loop through each character in the string
+    for char in s:
+        if char.isupper():  # Check if the character is uppercase
+            upper_count += 1
+        elif char.islower():  # Check if the character is lowercase
+            lower_count += 1
+
+    # Print the results
+    print(f"No. of Upper case characters: {upper_count}")
+    print(f"No. of Lower case characters: {lower_count}")
+
+# Sample input
+sample_string = 'The quick Brown Fox'
+
+# Call the function with the sample string
+count_upper_lower(sample_string)
+
+2)-
+import tkinter as tk
+from time import strftime
+
+# Function to update the time
+def update_time():
+    current_time = strftime('%H:%M:%S %p')  # Get the current time in the format HH:MM:SS AM/PM
+    label.config(text=current_time)  # Update the label with the current time
+    label.after(1000, update_time)  # Call update_time again after 1000ms (1 second)
+
+# Create the main window
+root = tk.Tk()
+root.title("Digital Clock")
+
+# Create a label to display the time
+label = tk.Label(root, font=('calibri', 40, 'bold'), background='purple', foreground='white')
+label.pack(anchor='center')
+
+# Call the update_time function to start the clock
+update_time()
+
+# Run the application
+root.mainloop()
+

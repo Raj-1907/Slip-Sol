@@ -1,0 +1,63 @@
+Slip-5
+
+Java
+1)
+public class NumberPattern1 {
+    public static void main(String[] args) {
+        int n = 5; // Maximum number to display
+
+        // Loop for each row
+        for (int i = n; i >= 1; i--) {
+            // Loop to print numbers from i to n
+            for (int j = i; j <= n; j++) {
+                System.out.print(j + " "); // Print the number with a space
+            }
+            System.out.println(); // Move to the next line after each row
+        }
+    }
+}
+
+
+Python
+
+1)-
+# Define the class
+class StringManipulator:
+    def __init__(self):
+        self.string = ""
+
+    # Method to get a string from the user
+    def get_String(self):
+        self.string = input("Enter a string: ")
+
+    # Method to print the string in uppercase
+    def print_String(self):
+        print(self.string.upper())
+
+# Create an object of the class
+string_manipulator = StringManipulator()
+
+# Get the string from the user
+string_manipulator.get_String()
+
+# Print the string in uppercase
+string_manipulator.print_String()
+
+2)-
+# Define the Fibonacci generator function
+def fibonacci_gen(n):
+    a, b = 0, 1
+    for _ in range(n):
+        yield a
+        a, b = b, a + b
+
+# Input: number of Fibonacci terms to generate
+n = int(input("Enter the number of Fibonacci terms: "))
+
+# Create the generator and generate Fibonacci terms
+fib_terms = fibonacci_gen(n)
+
+# Print the Fibonacci terms
+for term in fib_terms:
+    print(term)
+
